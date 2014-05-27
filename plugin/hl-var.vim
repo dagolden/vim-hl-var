@@ -77,14 +77,14 @@ endfunction
 if (!exists("g:hlvarnoauto") || g:hlvarnoauto == 1)
     augroup HighlightVar
         autocmd!
-        au FileType perl :au CursorHold  * call <sid>hlvar()
-        au FileType perl :au CursorHoldi * call <sid>hlvar()
-        au CursorHold  *.pl call <sid>hlvar()
-        au CursorHoldi *.pl call <sid>hlvar()
-        au CursorHold  *.pm call <sid>hlvar()
-        au CursorHoldi *.pm call <sid>hlvar()
-        au CursorHold  *.t  call <sid>hlvar()
-        au CursorHoldi *.t  call <sid>hlvar()
+        au FileType perl :au CursorMoved  * call <sid>hlvar()
+        au FileType perl :au CursorMovedi * call <sid>hlvar()
+        au CursorMoved  *.pl call <sid>hlvar()
+        au CursorMovedi *.pl call <sid>hlvar()
+        au CursorMoved  *.pm call <sid>hlvar()
+        au CursorMovedi *.pm call <sid>hlvar()
+        au CursorMoved  *.t  call <sid>hlvar()
+        au CursorMovedi *.t  call <sid>hlvar()
     augroup END
     if (exists("g:hlvarhl"))
         exe "highlight VarHl  " . g:hlvarhl
