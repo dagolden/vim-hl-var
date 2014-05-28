@@ -71,7 +71,7 @@ function! s:hlvar()
         let s:str = substitute( s:str, '^[$@%]', '[$@%]', '' )
     endif
     let s:match = s:match . s:str . '\n\{-\}\(\([^a-zA-Z0-9_\x7f-\xff]\)\|$\)\@='
-    let w:current_match = matchadd('VarHl', s:match)
+    let w:current_match = matchadd('SpellBad', s:match)
 endfunction
 
 if (!exists("g:hlvarnoauto") || g:hlvarnoauto == 1)
@@ -89,6 +89,7 @@ if (!exists("g:hlvarnoauto") || g:hlvarnoauto == 1)
     if (exists("g:hlvarhl"))
         exe "highlight VarHl  " . g:hlvarhl
     else
+        " highlight VarHl ctermbg=black guifg=#ff0000 guibg=#000000 ctermfg=LightRed gui=bold
         highlight VarHl ctermbg=black guifg=#ff0000 guibg=#000000 ctermfg=LightRed gui=bold
     endif
 endif
